@@ -1,0 +1,152 @@
+@import url(./variables.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(40deg, var(--green-001), var(--green-002));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: var(--white);
+    width: 625px;
+    height: 702px;
+    border-radius: 15px;
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-weight: 400;
+    margin: 0 0 30px 0;
+}
+
+.container-inputs {
+    width: 100%;
+}
+
+.container-inputs input {
+    display: block;
+    width: 100%;
+    height: 85px;
+    padding: 20px;
+    margin: 0 0 20px 0;
+    border: var(--light-gray) 1px solid;
+    border-radius: 2px;
+}
+
+.container-inputs input:focus {
+    border: var(--gray) 1px solid;
+    outline: 0;
+}
+
+.container-show-password {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    position: relative;
+    /* Tamanho */
+    width: 18px;
+    height: 18px;
+    /* Cor do fundo e borda */
+    background-color: transparent;
+    border: 0.125rem solid var(--light-gray);
+    border-radius: 0.25rem;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    /* Posicionar no meio */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Tamanho do marcador */
+    width: 11px;
+    height: 11px;
+    /* Formato do marcador */
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    /* Posicionar no meio */
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center;
+    transition: 0.125s transform ease-in-out;
+    /* Cor do marcador */
+    box-shadow: inset 1rem 1rem #fff;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--green-004);
+    border-color: var(--green-004);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.container-show-password label {
+    color: var(--dark-gray);
+}
+
+input[type="submit"] {
+    width: 146px;
+    height: 61px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    margin: 30px 0;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: 0.300s;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--green-003);
+}
+
+input[type="submit"]:active {
+    background-color: var(--green-004);
+}
+
+p {
+    margin: 10px 0;
+}
+
+p span {
+    color: var(--dark-gray);
+    font-size: 1rem;
+}
+
+p a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+p a:hover {
+    text-decoration: underline;
+    color: var(--green-003);
+}
+
+@media screen (max-width: 630px) {
+    form {
+        width: 100%;
+        height: 100vh;
+    }
+}
